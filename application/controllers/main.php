@@ -9,7 +9,7 @@ class Main extends CI_Controller {
 			'view'	=>	'main'
 		);
 
-		$this->load->view('welcome_message', $data);
+		$this->load->view('templates/main', $data);
 	}
 }
 

@@ -1,3 +1,11 @@
+RewriteEngine On
+RewriteCond $1 !^(index\.php|css|js|img|sqlbuddy|favicon\.ico|robots\.txt|humans\.txt)
+RewriteRule ^(.*)$ index.php/$1 [L]
+
+<IfModule dir_module>
+   DirectoryIndex index.php index.html
+</IfModule>
+
 # Apache configuration file
 # httpd.apache.org/docs/2.2/mod/quickreference.html
 
