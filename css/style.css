@@ -209,9 +209,295 @@ td { vertical-align: top; }
 
 
 /* ==|== primary styles =====================================================
-   Author:
+   Author: Robert Doucette
    ========================================================================== */
 
+html, body
+{
+  background: #5BC6CC;
+}
+
+#container
+{
+  margin: 0 auto;
+  width: 960px;
+}
+
+header
+{
+  overflow: hidden;
+  padding: 20px 0 0 0;
+}
+
+nav
+{
+
+}
+
+nav ul
+{
+  float: left;
+  margin: 0 0 0 20px;
+  padding: 0;
+}
+
+  nav ul li
+  {
+    float: left;
+    margin: 0;
+    padding: 10px 0;
+    
+  }
+
+    nav ul li a
+    {
+      background: #ADADAD;
+      border-radius: 10px;
+      color: black;
+      font-size: 14pt;
+      font-weight: bold;
+      list-style: none;
+      margin: 0 10px 0 0;
+      padding: 11px 20px;
+      position: relative;
+      text-decoration: none;
+    }
+
+      nav ul li a:hover, nav ul li a.active
+      {
+        background: yellow;
+        color: black;
+      }
+      
+      nav ul li a:visited
+      {
+        color: black;
+      }
+
+#connexion_box
+{
+  float: right;
+  padding: 5px 10px 0 0;
+  text-align: right;
+}
+
+#main
+{
+  clear: both;
+  overflow: hidden;
+  padding: 20px 0;
+}
+
+  .message
+  {
+    clear: both;
+    color: maroon;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  #search_form
+  {
+    float: left;
+    width: 260px;
+  }
+
+    #search_form p
+    {
+      margin: 0 0 20px 0;
+    }
+
+    #search_form input[type=text]
+    {
+      border-radius: 10px;
+      border: 2px solid orange;
+      display: block;
+      margin: 0 0 10px 0;
+      padding: 5px;
+      width: 247px;
+    }
+
+    #search_form input[type=submit]
+    {
+      float: right;
+      margin: 0 0 0 0;
+    }
+
+  #search_results
+  {
+    float: right;
+    width: 650px;
+  }
+
+#schedule
+{
+  margin: 0 auto;
+  max-width: 997px;
+  min-width: 917px;
+  text-align: center;
+}
+
+.cal_nav
+{
+  margin: 0 auto;
+  padding: 15px 0;
+  overflow: hidden;
+  width: 912px;
+}
+
+  .cal_nav div
+  {
+    float: left;
+    
+    font-size: 26px;
+    font-weight: bold;
+    text-align: right;
+    text-transform: uppercase;
+    width: 304px;
+  }
+
+  .cal_nav div:first-child
+  {
+    text-align: left;
+  }
+
+  .cal_nav div.active
+  {
+    color: #6F0000;
+    text-align: center;
+  }
+
+    .cal_nav div a
+    {
+      color: #1F4B7F;
+      text-decoration: none;
+    }
+
+      .cal_nav div a:hover
+      {
+        color: #143E6F;
+      }
+
+  #schedule table
+  {
+    background: #FFFFAF;
+    border: 1px solid black;
+    font-family: "Times New Roman";
+    width: 100%;
+  }
+
+  #schedule td
+  {
+    color: black;
+  }
+
+  #schedule tr th
+  {
+    background: #6F0000;
+    border: 1px solid black;
+    border-bottom: none;
+    color: white;
+    font-size: 22px;
+    padding: 5px;
+    text-transform: uppercase;
+  }
+
+  #schedule td.time
+  {
+    font-size: 12px;
+    width: 100px;
+  }
+
+    #schedule td
+    {
+      border-left: 1px solid black;
+      border-right: 1px solid black;
+      padding: 2px 3px;
+    }
+
+      #schedule td
+      {
+        /*color: #143E6F;*/
+        font-family: 'Times New Roman';
+        font-size: 11px;
+        font-weight: bold;
+        letter-spacing: 1px;
+      }
+
+      #schedule td.d
+      {
+        background: #7C93DB;
+        border: 1px solid black;
+        border-bottom: 2px solid black;
+        border-top: 2px solid black;
+        color: #6F0000;
+        font-size: 18px;
+      }
+
+      #schedule td.cours
+      {
+        color: #01288C;
+      }
+
+      #schedule td.b
+      {
+        color: #BF0000;
+      }
+
+      #schedule td.s
+      {
+        color: #FF4300;
+        
+      }
+
+      #schedule td.v
+      {
+        color: #85088F;
+      }
+
+      #schedule td.done
+      {
+        color: red;
+        text-decoration: line-through;
+      }
+
+      #schedule td.today
+      {
+        background: #BFE8FF;
+      }
+
+#box
+{
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+}
+
+  #box p
+  {
+    background: white;
+    border-radius: 0 0 15px 15px;
+    border: 1px solid black;
+    border-top: none;
+    margin: 0 auto;
+    padding: 20px 10px;
+    position: relative;
+    text-align: center;
+    width: 300px;
+  }
+
+  #box input
+  {
+    margin: 10px 3px 10px 0;
+    width: 50%;
+  }
+
+footer
+{
+  background: #479E45;
+  clear: both;
+  padding: 20px 0;
+  text-align: center;
 
 
 

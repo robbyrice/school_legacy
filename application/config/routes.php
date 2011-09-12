@@ -41,6 +41,10 @@
 $route['default_controller'] = "main";
 $route['404_override'] = '';
 
+$route['logout']		=	'connexion/logout';
+$route['bib/:num']	=	'bib/index/$1';
+$route['cal']			= 'cal/afficher';
+$route['cal/afficher/(:any)'] = 'cal/afficher/index/$1/$2/$3';
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

@@ -1,3 +1,4 @@
+<?php $first = $this->uri->segment(1); ?>
 <!doctype html>
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
 <!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="fr"> <![endif]-->
@@ -17,6 +18,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/jquery-ui-1.8.16.css">
 
   <!-- All JavaScript at the bottom, except this Modernizr build incl. Respond.js
        Respond is a polyfill for min/max-width media queries. Modernizr enables HTML5 elements & feature detects; 
@@ -28,7 +30,19 @@
 
   <div id="container">
     <header>
-
+      <nav>
+        <ul>
+<?php echo list_nav('', $first, array(''=>'Accueil', 'bib'=>'Bibliothèque', 'cal'=>'Calendrier'), 5); ?>
+        </ul>
+      </nav>
+      <div id="connexion_box">
+<?php if($this->current_user->info()): ?>
+        <p>Bienvenue, <strong><?php echo $this->current_user->info()->pseudo; ?></strong></p>
+        <a href="logout">Se déconnecter</a>
+<?php elseif($first !== 'connexion'): ?>
+        <a href="connexion">Se connecter</a>
+<?php endif; ?>
+      </div>
     </header>
     <div id="main" role="main">
 <?php $this->load->view($view.'_view'); ?>
