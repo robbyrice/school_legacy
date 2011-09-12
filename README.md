@@ -1,1 +1,1 @@
-This project is a combination the html5 Boilerplate from Paul Irish and the CodeIgniter PHP framework from EllisLabs.
+This is the code behind the web app for the Institut Biblique Baptiste Libre de Mantes/Limay.
