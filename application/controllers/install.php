@@ -10,7 +10,7 @@ Class Install extends CI_Controller
 	public function index()
 	{
 		$date = date_mysql();
-		$this->load->library('data', array('user_id'=>1));
+		$this->load->library('data', array('u_id'=>1));
 
 		//Creating the tables
 		$this->db->trans_start();
