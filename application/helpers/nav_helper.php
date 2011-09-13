@@ -5,20 +5,20 @@ function list_nav($base, $cur, $items, $num=1)
 	$nav = '';
 	$tab = '';
 
-	for($i=1; $i<=$num; $i++)
+	for($i=1; $i<=$num; $i+=1)
 	{
 		$tab .= "\t";
 	}
 
 	foreach($items as $key=>$value)
 	{
-		$active = '';
 		$ref = $base.$key;
 		switch($cur)
 		{
-			case ltrim($key,'/'):$active = " class='active'";
+			case ltrim($key,'/'):$active = ' class="active"';break;
+			default:$active = '';
 		}
-		$nav .= $tab."<li><a".$active." href='$ref'>".$value."</a></li>\n";
+		$nav .= $tab.'<li><a'.$active.' href="'.$ref.'">'.$value."</a></li>\n";
 	}
 	return $nav;
 }
