@@ -1,1 +1,1 @@
-<p>The main view has been loaded</p>
+			<p>The main view has been loaded</p>
