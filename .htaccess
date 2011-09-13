@@ -318,6 +318,9 @@ FileETag None
 # Removing the need for index.php in CodeIgniter URLs
 # ----------------------------------------------------------------------
 
+# To make folders and resources outside the ./application folder available add
+# them between the parenthesis on the first line separated by the | character
+
 RewriteCond $1 !^(index\.php|css|js|img|favicon\.ico|robots\.txt|humans\.txt)
 RewriteRule ^(.*)$ index.php/$1 [L]
 
