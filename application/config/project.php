@@ -23,6 +23,15 @@
 $config['site_name'] = 'localhost';
 
 
+/*
+|--------------------------------------------------------------------------
+| The first day of the second semester for the 2011-2012 school year
+|--------------------------------------------------------------------------|
+|
+|
+*/
+$config['sem_start'] = 7;
+
 
 # End of file project.php
 # Location: ./application/config/project.php
