@@ -25,18 +25,15 @@
 </head>
 
 <body>
-
-	<div id="container">
 		<header>
 
 		</header>
-		<div id="main" role="main">
+		<div role="main">
 <?php $this->load->view($view.'_view'); ?>
 		</div>
 		<footer>
 
 		</footer>
-	</div> <!--! end of #container -->
 
 
 	<!-- JavaScript at the bottom for fast page loading -->
