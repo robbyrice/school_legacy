@@ -22,6 +22,16 @@
 */
 $config['site_name'] = '';
 
+/*
+|--------------------------------------------------------------------------
+| Version of the site
+|--------------------------------------------------------------------------
+|
+| Doesn't really need any explanation.
+|
+*/
+$config['version'] = '0.1';
+
 
 
 # End of file project.php
