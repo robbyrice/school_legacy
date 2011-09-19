@@ -469,7 +469,7 @@ nav ul
 #box
 {
   position: fixed;
-  width: 100%;
+  width: 960px;
   z-index: 2;
 }
 
