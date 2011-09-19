@@ -212,12 +212,12 @@ td { vertical-align: top; }
    Author: Robert Doucette
    ========================================================================== */
 
-html, body
+html
 {
   background: #5BC6CC;
 }
 
-#container
+body
 {
   margin: 0 auto;
   width: 960px;

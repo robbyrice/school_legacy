@@ -42,7 +42,7 @@
 <?php endif; ?>
 			</div>
 		</header>
-		<div role="main">
+		<div id="main" role="main">
 <?php $this->load->view($view.'_view'); ?>
 		</div>
 		<footer>
