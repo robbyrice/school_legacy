@@ -78,7 +78,7 @@ Class Cours_model extends CI_Model {
 			'type'		=>	$type
 		);
 
-		if( ! $this->db->insert('Cours', $this->data->prep($data)))return 'Il y a eu un problème pour ajouter le nom à la base de données';
+		if( ! $this->db->insert('cours', $this->data->prep($data)))return 'Il y a eu un problème pour ajouter le nom à la base de données';
 
 		return 'Le nom du cours a été bien ajouté.';
 	}
@@ -108,7 +108,7 @@ Class Cours_model extends CI_Model {
 
 		$this->db->set('type', $type);
 
-		if( ! $this->db->where('cours_id', $old_id)->update('Cours', $this->data->prep('', 'update')))return 'Il y a eu un problème :o(';
+		if( ! $this->db->where('cours_id', $old_id)->update('cours', $this->data->prep('', 'update')))return 'Il y a eu un problème :o(';
 
 		return 'Le nom a été bien mis à jour.';
 	}
@@ -125,7 +125,7 @@ Class Cours_model extends CI_Model {
 	public function delete($old_id)
 	{
 		if($old_id === '2')return 'Vous ne pouvez pas supprimer ce cours.';
-		$this->db->delete('Cours', array('cours_id' => $old_id));
+		$this->db->delete('cours', array('cours_id' => $old_id));
 		return 'Le nom a été bien supprimé.';
 	}
 
