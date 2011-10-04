@@ -16,7 +16,7 @@ class Bib extends CI_Controller {
 		{
 			extract($this->input->post());
 			$this->load->model('auteur_model');
-			$this->load->library('data', array('user_id'=>$this->current_user->info()->user_id));
+			$this->load->library('data', array('u_id'=>$this->current_user->info()->user_id));
 
 			$this->form_validation->set_rules('titre', 'Titre', 'required');
 			$this->form_validation->set_rules('prenom[]', 'Prenom', 'required');
