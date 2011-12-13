@@ -1,1 +1,0 @@
-This is the code behind the web app for the Institut Biblique Baptiste Libre de Mantes/Limay.
