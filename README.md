@@ -1,1 +1,0 @@
-This project is a combination the html5 Boilerplate from Paul Irish and the CodeIgniter PHP framework from EllisLabs.
