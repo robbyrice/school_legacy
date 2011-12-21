@@ -5,14 +5,14 @@
 var author = {
 	init : function(settings) {
 		author.config = {
-			html : '<p><label>Prénom : </label><input class="prenom" name="prenom[]" />	<label>Surnom : </label><input class="surnom" name="surnom[]" />	<label>Nom : </label><input class="nom" name="nom[]" /> <img class="delete" src="img/001_05.png" /></p>',
+			html : '<div><p><label>Prénom : </label><input class="prenom" name="prenom[]" /></p><p><label>Surnom : </label><input class="surnom" name="surnom[]" /></p><p><label>Nom : </label><input class="nom" name="nom[]" /></p><img class="delete" src="img/001_05.png" /></div>',
 			url : 'bib/auteurs'
 		};
 		author.autocomp('.prenom');
 		$.extend(author.config, settings);
 	},
 	add : function(target) {
-		$(target).parent('p').siblings('input').before(author.config.html).prev('p').children('input:first').focus();
+		$(target).parent('div').siblings('input').before(author.config.html).prev().children('p').children('input:first').focus();
 		author.autocomp('.prenom');
 	},
 	autocomp : function(target) {
@@ -21,12 +21,12 @@ var author = {
 			source: author.config.url,
 			delay: 0,
 			select: function(event, ui) {
-				$(this).siblings('.surnom').val(ui.item.surnom).siblings('.nom').val(ui.item.nom).parent('p').next().focus();
+				$(this).parent('p').next().children('input').val(ui.item.surnom).parent('p').next().children('input').val(ui.item.nom).parent('p').parent('div').next().focus();
 			}
 		});
 	},
 	remove : function(target) {
-		$(target).parent('p').remove();
+		$(target).parent('div').remove();
 	}
 };
 

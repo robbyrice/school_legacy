@@ -271,13 +271,20 @@ nav ul
 #connexion_box
 {
   float: right;
-  padding: 5px 10px 0 0;
+  padding: 0px 20px 0 0;
   text-align: right;
 }
+
+  #connexion_box p
+  {
+    margin: 0;
+    padding: 0;
+  }
 
 #main
 {
   clear: both;
+  font-size: 10pt;
   overflow: hidden;
   padding: 20px 0;
 }
@@ -290,39 +297,84 @@ nav ul
     text-align: center;
   }
 
-  #search_form
-  {
-    float: left;
-    width: 260px;
-  }
 
-    #search_form p
-    {
-      margin: 0 0 20px 0;
-    }
+/* =============================================================================
+   Library styles
+   ========================================================================== */
+#instructions
+{
+  float: left;
+  width: 320px;
+}
 
-    #search_form input[type=text]
-    {
-      border-radius: 10px;
-      border: 2px solid orange;
-      display: block;
-      margin: 0 0 10px 0;
-      padding: 5px;
-      width: 247px;
-    }
-
-    #search_form input[type=submit]
-    {
-      float: right;
-      margin: 0 0 0 0;
-    }
-
-  #search_results
+  #add_book form
   {
     float: right;
-    width: 650px;
   }
 
+    #add_book form div
+    {
+      clear: both;
+      height: 30px;
+      margin: 0 0 30px 0;
+    }
+
+    #add_book form p
+    {
+      float: left;
+      margin: 0 40px 0 0;
+    }
+
+    #add_book form label
+    {
+      display: block;
+      font-size: 12pt;
+    }
+
+    #add_book form img
+    {
+      left: -30px;
+      position: relative;
+      top: 23px;
+    }
+
+#search_form
+{
+  /*float: left;*/
+  width: 260px;
+}
+
+  #search_form p
+  {
+    margin: 0 0 20px 0;
+  }
+
+  #search_form input[type=text]
+  {
+    border-radius: 10px;
+    border: 2px solid orange;
+    display: block;
+    margin: 0 0 10px 0;
+    padding: 5px;
+    width: 247px;
+  }
+
+  #search_form input[type=submit]
+  {
+    /*float: right;*/
+    margin: 0;
+  }
+
+#search_results
+{
+  /*float: right;*/
+  width: 650px;
+}
+
+
+/* =============================================================================
+   Calendar styles
+   ========================================================================== */
 #schedule
 {
   margin: 0 auto;
@@ -342,7 +394,6 @@ nav ul
   .cal_nav div
   {
     float: left;
-    
     font-size: 26px;
     font-weight: bold;
     text-align: right;
