@@ -89,7 +89,6 @@
             <antcall target="-text.production"/>
         </else>
     </if>
-    <antcall target="-imgcopy"/>
     </target>
 
 
@@ -528,9 +527,7 @@
             <fileset dir="${dir.source}/" includes="${dir.js}/**/*.min.js"  />
         </copy>
         <apply executable="java" parallel="false">
-            <fileset dir="${dir.source}/" >
-                <include name="${dir.js}/**/*.js"/>
-                <exclude name="${dir.js}/**/*.min.js"/>
+            <fileset dir="${dir.source}/" excludes="${dir.js.mylibs}/${file.js.bypass}, ${dir.js}/**/*.min.js" includes="${dir.js}/**/*.js">
             </fileset>
             <arg line="-jar"/>
             <arg path="./${dir.build.tools}/closure-compiler-v1346.jar"/>
@@ -698,7 +695,7 @@
                 <copy file="${dir.intermediate}/${file.manifest}" tofile="${dir.publish}/${file.manifest}" />
 
                 <echo>Add manifest attribute to HTML: </echo>
-                <replaceregexp match="&lt;html (.*?)>\s*?&lt;!--&lt;!\[endif" replace='&lt;html \1 manifest="${file.manifest}"> &lt;!--&lt;![endif' flags="g">
+                <replaceregexp match="&lt;html (.*?)>" replace='&lt;html \1 manifest="${file.manifest}">' flags="g">
                     <fileset dir="./${dir.intermediate}" includes="${page-files}"/>
                 </replaceregexp>
 
@@ -714,10 +711,10 @@
         <echo message=" - maintaining whitespace"/>
         <echo message=" - removing html comments"/>
         <echo message=" - compressing inline style/script tag contents"/>
-        <apply executable="java" parallel="false" dest="./${dir.publish}/" >
-            <fileset dir="./${dir.intermediate}/" includes="${page-files}"/>
+        <apply executable="java" parallel="false">
+            <fileset dir="${dir.intermediate}/" includes="${page-files}"/>
             <arg value="-jar"/>
-            <arg path="./${dir.build.tools}/${tool.htmlcompressor}"/>
+            <arg path="${dir.build.tools}/${tool.htmlcompressor}"/>
             <arg line="--preserve-multi-spaces"/>
             <arg line="--remove-quotes"/>
             <arg line="--compress-js"/>
@@ -726,7 +723,7 @@
             <arg line="--preserve-ssi"/>
             <srcfile/>
             <arg value="-o"/>
-            <mapper type="glob" from="*" to="../${dir.publish}/*"/>
+            <mapper type="glob" from="*" to="${basedir}/${dir.publish}/*"/>
             <targetfile/>
         </apply>
     </target>
@@ -737,10 +734,10 @@
         <echo message=" - maintaining whitespace"/>
         <echo message=" - retain html comments"/>
         <echo message=" - compressing inline style/script tag contents"/>
-        <apply executable="java" parallel="false" dest="./${dir.publish}/" >
-            <fileset dir="./${dir.intermediate}/" includes="${page-files}"/>
+        <apply executable="java" parallel="false">
+            <fileset dir="${dir.intermediate}/" includes="${page-files}"/>
             <arg value="-jar"/>
-            <arg path="./${dir.build.tools}/${tool.htmlcompressor}"/>
+            <arg path="${dir.build.tools}/${tool.htmlcompressor}"/>
             <arg value="--preserve-comments"/>
             <arg line="--preserve-multi-spaces"/>
             <arg line="--compress-js"/>
@@ -749,7 +746,7 @@
             <arg line="--preserve-ssi"/>
             <srcfile/>
             <arg value="-o"/>
-            <mapper type="glob" from="*" to="../${dir.publish}/*"/>
+            <mapper type="glob" from="*" to="${basedir}/${dir.publish}/*"/>
             <targetfile/>
         </apply>
     </target>
@@ -760,10 +757,10 @@
         <echo message=" - removing unnecessary whitespace"/>
         <echo message=" - removing html comments"/>
         <echo message=" - compressing inline style/script tag contents"/>
-        <apply executable="java" parallel="false" dest="./${dir.publish}/" >
-            <fileset dir="./${dir.intermediate}/" includes="${page-files}"/>
+        <apply executable="java" parallel="false">
+            <fileset dir="${dir.intermediate}/" includes="${page-files}"/>
             <arg value="-jar"/>
-            <arg path="./${dir.build.tools}/${tool.htmlcompressor}"/>
+            <arg path="${dir.build.tools}/${tool.htmlcompressor}"/>
             <arg line="--remove-quotes"/>
             <arg line="--compress-js"/>
             <arg line="--compress-css"/>
@@ -771,7 +768,7 @@
             <arg line="--preserve-ssi"/>
             <srcfile/>
             <arg value="-o"/>
-            <mapper type="glob" from="*" to="../${dir.publish}/*"/>
+            <mapper type="glob" from="*" to="${basedir}/${dir.publish}/*"/>
             <targetfile/>
         </apply>
     </target>
@@ -1051,14 +1048,6 @@
         </apply>
     </target>
 
-
-    <target name="-imgcopy" depends="-mkdirs">
-        <echo message="Copying over the unmodified images."/>
-
-        <copy todir="./${dir.publish}/${dir.images}">
-            <fileset dir="${dir.source}/${dir.images}"  includes="**/*.jpg, **/*.png"/>
-        </copy>
-    </target>
 
 	<!-- Import project.xml (put any custom build targets in this file so that they aren't overwritten when build.xml is updated) -->
 	<!-- See: https://github.com/h5bp/html5-boilerplate/issues/704 -->
