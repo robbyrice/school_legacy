@@ -340,7 +340,6 @@ nav ul
 
 #search_form
 {
-  /*float: left;*/
   width: 260px;
 }
 
@@ -361,13 +360,11 @@ nav ul
 
   #search_form input[type=submit]
   {
-    /*float: right;*/
     margin: 0;
   }
 
 #search_results
 {
-  /*float: right;*/
   width: 650px;
 }
 
