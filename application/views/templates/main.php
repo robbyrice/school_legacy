@@ -19,9 +19,9 @@
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/jquery-ui-1.8.16.css">
 
-	<!-- All JavaScript at the bottom, except this Modernizr build incl. Respond.js
-		Respond is a polyfill for min/max-width media queries. Modernizr enables HTML5 elements & feature detects; 
-		for optimal performance, create your own custom Modernizr build: www.modernizr.com/download/ -->
+  <!-- All JavaScript at the bottom, except this Modernizr build.
+       Modernizr enables HTML5 elements & feature detects for optimal performance.
+       Create your own custom Modernizr build: www.modernizr.com/download/ -->
 	<script src="js/libs/modernizr-2.0.6.min.js"></script>
 </head>
 
