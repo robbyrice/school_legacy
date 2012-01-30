@@ -582,13 +582,12 @@
       <!-- at this point all js files are minified with their original names -->
 
       <copy todir="${dir.publish}/${dir.js}">
-        <fileset dir="${dir.intermediate}/${dir.js}" includes="${file.js.bypass}">
+        <fileset dir="${dir.intermediate}/${dir.js}" includes="${file.js.bypass}, ${slug.libs}/*">
             <exclude name="scripts-concat.js"/>
             <exclude name="scripts-concat.min.js"/>
             <exclude name="otherscripts-concat.js"/>
             <exclude name="plugins.js"/>
             <exclude name="${file.root.script}"/>
-            <include name="${slug.lib}/*"/>
         </fileset>
       </copy>
   </target>
@@ -655,8 +654,8 @@
 
       <echo message="Updating the HTML with the new css filename: ${style.css}"/>
 
-      <replaceregexp match="&lt;link rel=['&quot;]?stylesheet['&quot;]?\s+href=['&quot;]?(.*)/${file.root.stylesheet}(?:\?.*)?['&quot;]?\s*/?&gt;"
-        replace="&lt;link rel='stylesheet' href='\1/${css.sha}.css'&gt;" flags="m">
+      <replaceregexp match="&lt;link(.+)href=['&quot;]?(.*)/${file.root.stylesheet}(?:\?.*)?['&quot;\s]?(.*/?&gt;)"
+        replace="&lt;link\1href='\2/${css.sha}.css'\3" flags="m">
           <fileset dir="${dir.intermediate}" includes="${page-files}"/>
       </replaceregexp>
 
@@ -723,7 +722,7 @@
                 <copy file="${dir.intermediate}/${file.manifest}" tofile="${dir.publish}/${file.manifest}" />
 
                 <echo>Add manifest attribute to HTML: </echo>
-                <replaceregexp match="&lt;html (.*?)>" replace='&lt;html \1 manifest="${file.manifest}">' flags="g">
+                <replaceregexp match="&lt;html (.*?!\?)&gt;" replace='&lt;html \1 manifest="${file.manifest}"&gt;' flags="g">
                     <fileset dir="./${dir.intermediate}" includes="${page-files}"/>
                 </replaceregexp>
 
@@ -743,12 +742,7 @@
             <fileset dir="${dir.intermediate}/" includes="${page-files}"/>
             <arg value="-jar"/>
             <arg path="${dir.build.tools}/${tool.htmlcompressor}"/>
-            <arg line="--preserve-multi-spaces"/>
-            <arg line="--remove-quotes"/>
-            <arg line="--compress-js"/>
-            <arg line="--compress-css"/>
-            <arg line="--preserve-php"/>
-            <arg line="--preserve-ssi"/>
+            <arg line="${tool.htmlcompressor.opts} ${tool.htmlcompressor.opts.extra}"/>
             <srcfile/>
             <arg value="-o"/>
             <mapper type="glob" from="*" to="${basedir}/${dir.publish}/*"/>
