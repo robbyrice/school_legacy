@@ -46,8 +46,8 @@
 
 
    <!-- scripts concatenated and minified via build script -->
-   <script defer src="js/plugins.js"></script>
-   <script defer src="js/script.js"></script>
+   <script src="js/plugins.js"></script>
+   <script src="js/script.js"></script>
    <!-- end scripts -->
 
 </body>
