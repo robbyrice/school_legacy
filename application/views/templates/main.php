@@ -4,7 +4,7 @@
 <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!-- Consider adding a manifest.appcache: h5bp.com/d/Offline -->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="fr"> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
    <meta charset="utf-8">
    <base href="<?php echo base_url(); ?>">
@@ -12,7 +12,7 @@
    <title><?php echo $title.' | '. config_item('site_name'); ?></title>
    <meta name="description" content="">
 
-   <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+   <!-- Mobile viewport optimized: h5bp.com/viewport -->
    <meta name="viewport" content="width=device-width">
 
    <link rel="stylesheet" href="css/style.css">
@@ -20,7 +20,7 @@
    <!-- All JavaScript at the bottom, except this Modernizr build.
          Modernizr enables HTML5 elements & feature detects for optimal performance.
          Create your own custom Modernizr build: www.modernizr.com/download/ -->
-   <script src="js/libs/modernizr-2.0.6.min.js"></script>
+   <script src="js/libs/modernizr-2.5.0.min.js"></script>
 </head>
 
 <body>
