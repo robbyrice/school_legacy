@@ -337,7 +337,7 @@ FileETag None
 # To make folders and resources outside the ./application folder available add
 # them between the parenthesis on the first line separated by the | character
 
-RewriteCond $1 !^(index\.php|css|js|img|favicon\.ico|robots\.txt|humans\.txt)
+RewriteCond $1 !^(index\.php|css|js|img|.*(\.txt|\.xml|\.png|\.ico))
 RewriteRule ^(.*)$ index.php/$1 [L]
 
 
