@@ -1,6 +1,6 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-/**
+/*
  * Verify Case
  *
  * Lets us manipulate the input string to make sure the output is
@@ -11,9 +11,9 @@
  *
  * name		-	name capitalization (default)
  * sentence	-	sentence capitalization
- * class		-	class name capitalization
- * upper		-	all uppercase
- * lower		-	all lowercase
+ * class	-	class name capitalization
+ * upper	-	all uppercase
+ * lower	-	all lowercase
  *
  * @access	public
  * @param	string
@@ -38,11 +38,11 @@ function verify_case($input, $type='name')
 	{
 		if(strpos($value, '\\') === 0)
 		{
-			$new	.=	mb_strtoupper(ltrim($value, '\\'));
+			$new .=	mb_strtoupper(ltrim($value, '\\'));
 		}
 		elseif(strpos($value, '_') === 0)
 		{
-			$new	.=	ucfirst(ltrim($value, '_'));
+			$new .=	ucfirst(ltrim($value, '_'));
 		}
 		else
 		{
@@ -53,11 +53,11 @@ function verify_case($input, $type='name')
 				case 'name' :
 					if(strlen($value) === 1 AND $len === 1)
 					{
-						$new	.= mb_strtoupper($value).'.';
+						$new .= mb_strtoupper($value).'.';
 					}
 					else
 					{
-						$new	.=	ucfirst($value);
+						$new .=	ucfirst($value);
 					}
 					break;
 				case 'sentence':
@@ -67,31 +67,31 @@ function verify_case($input, $type='name')
 						default:
 							switch($value)
 							{
-								case 'god':		$new	.=	ucfirst($value);break;
-								case 'dieu':	$new	.=	ucfirst($value);break;
-								case 'christ':	$new	.=	ucfirst($value);break;
-								case 'jesus':	$new	.= ucfirst($value);break;
-								case 'jésus':	$new	.= ucfirst($value);break;
-								case 'lord':	$new	.=	ucfirst($value);break;
-								case 'bible':	$new	.=	ucfirst($value);break;
-								case 'i':		$new	.=	mb_strtoupper($value);break;
-								default:			$new	.=	$value;
+								case 'god':		$new .=	ucfirst($value);break;
+								case 'dieu':	$new .=	ucfirst($value);break;
+								case 'christ':	$new .=	ucfirst($value);break;
+								case 'jesus':	$new .= ucfirst($value);break;
+								case 'jésus':	$new .= ucfirst($value);break;
+								case 'lord':	$new .=	ucfirst($value);break;
+								case 'bible':	$new .=	ucfirst($value);break;
+								case 'i':		$new .=	mb_strtoupper($value);break;
+								default:		$new .=	$value;
 							}
 					}
 					break;
 				case 'class':
 					switch($value)
 					{
-						case 'at':	$new	.=	mb_strtoupper($value);break;
-						case 'au':	$new	.=	$value;break;
-						case 'de':	$new	.= $value;break;
-						case 'du':	$new	.= $value;break;
-						case 'et':	$new	.= $value;break;
-						case 'ii':	$new	.=	mb_strtoupper($value);break;
-						case 'iii':	$new	.=	mb_strtoupper($value);break;
-						case 'l':	$new	.= $value;break;
-						case 'nt':	$new	.= mb_strtoupper($value);break;
-						default:		$new	.=	ucfirst($value);
+						case 'at':	$new .=	mb_strtoupper($value);break;
+						case 'au':	$new .=	$value;break;
+						case 'de':	$new .= $value;break;
+						case 'du':	$new .= $value;break;
+						case 'et':	$new .= $value;break;
+						case 'ii':	$new .=	mb_strtoupper($value);break;
+						case 'iii':	$new .=	mb_strtoupper($value);break;
+						case 'l':	$new .= $value;break;
+						case 'nt':	$new .= mb_strtoupper($value);break;
+						default:	$new .=	ucfirst($value);
 					}
 					break;
 			}
